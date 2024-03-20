@@ -24,6 +24,8 @@ void loop(){
     }
 
     // 3rd step: DS18B20 Function Command. Start sequence to convert temperature.
-
+    ow.reset();
+    ow.write(0xCC); //skip the ROM
+    ow.write(0x44); //convert temperatures
 
 }
