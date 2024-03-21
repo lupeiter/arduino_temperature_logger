@@ -19,6 +19,11 @@
                 "C:\\Users\\lupei\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
                 "C:\\Users\\lupei\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard",
                 "C:\\Users\\lupei\\Documents\\Arduino\\libraries\\OneWire",
+                "C:\\Users\\lupei\\Documents\\Arduino\\libraries\\RTClib\\src",
+                "C:\\Users\\lupei\\Documents\\Arduino\\libraries\\Adafruit_BusIO",
+                "C:\\Users\\lupei\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
+                "C:\\Users\\lupei\\Documents\\Arduino\\libraries\\SD\\src",
+                "C:\\Users\\lupei\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
                 "c:\\users\\lupei\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include",
                 "c:\\users\\lupei\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include-fixed",
                 "c:\\users\\lupei\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\avr\\include"
