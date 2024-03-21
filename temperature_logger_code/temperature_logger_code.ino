@@ -28,6 +28,11 @@ void loop(){
     ow.write(0xCC); //skip the ROM
     ow.write(0x44); //convert temperatures
 
+    // Wait for temperature conversion to be finished
+    while (ow.read_bit() == 0){
+        delay(10);
+    }; // Add time because depending on the bit-resolution, that according to the data sheet can take until an XXX time 
+
     // Start sequence to read data from the scratchpad - HEX Code 0xBE
     ow.reset();
     ow.write(0xCC);
