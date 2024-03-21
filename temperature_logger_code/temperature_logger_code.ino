@@ -2,12 +2,26 @@
 Using DS18B20 sensor
 */
 #include <OneWire.h>
+#include <RTClib.h>
 
 #define DS18B20_Pin 8
 OneWire ow(DS18B20_Pin);
 
+RTC_DS1307 rtc; // make the time clock available (DS1307 is the type in our Arduino) 
+
 void setup(){
     Serial.begin(9600);
+
+    if (!rtc.begin()) {
+        Serial.println("# Couldn't find RTC!");
+        while (1);
+    }
+    
+    if (!rtc.isrunning()){
+        rtc.adjust(DateTime(F(__DATE__, F(__TIME__))));
+    }
+    /* rtc.adjust(DateTime(F(__DATE__, F(__TIME__)))); // uncomment if battery was replaced 
+    and then push twice; once with the statement, one without */
 }
 
 void loop(){
@@ -52,7 +66,8 @@ void loop(){
     for (int i=1; i<7; i++){
         registration_number += String(rom_code[i], HEX);
     }
-    Serial.println(registration_number); 
+    Serial.print(registration_number); 
+    Serial.print(", ");
 
     // Read temperature information from scratchpad variable
     // The OR operator concatenate both "bit" blocks and then we allocate it to an integer so it already converts into real value (16bits integer)
