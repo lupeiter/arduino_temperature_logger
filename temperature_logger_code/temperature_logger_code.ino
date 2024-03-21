@@ -48,5 +48,14 @@ void loop(){
         registration_number += String(rom_code[i], HEX);
     }
     Serial.println(registration_number); 
+
+    // Read temperature information from scratchpad variable
+    // The OR operator concatenate both "bit" blocks and then we allocate it to an integer so it already converts into real value (16bits integer)
+    int16_t tempRead = (scratchpad[1] << 8) |  scratchpad[0] ; // shifting 8 bits because its the beginning of the number
+
+    float tempCelsius = (float)tempRead / 16.0; /* divide by 2^4 for 4 digits, i.e. 12-bit resolution of the sensor 
+    and the first 8 digits are decimal values*/
+    Serial.println(tempCelsius, 4);
+
     delay(1500);
 }
