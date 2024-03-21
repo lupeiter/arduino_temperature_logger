@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "COM4",
+    "sketch": "temperature_logger_code\\temperature_logger_code.ino"
+}

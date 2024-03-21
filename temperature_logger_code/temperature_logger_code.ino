@@ -1,13 +1,13 @@
 /*Arduino temperature logger
 Using DS18B20 sensor
 */
-#include OneWire.h
+#include <OneWire.h>
 
 #define DS18B20_Pin 8
 OneWire ow(DS18B20_Pin);
 
 void setup(){
-
+    Serial.begin(9600);
 }
 
 void loop(){
@@ -37,4 +37,16 @@ void loop(){
         scratchpad[i] = ow.read();
     }
    
+   // Extract information from retrieved data
+   // Get serial number from ROM code data
+   // The data is already in the Arduino, available to be used
+    if (rom_code[0] != 0x28) {
+        Serial.print("# Sensor is not a DS18B20 sensor!");
+    }
+    String registration_number;
+    for (int i=1; i<7; i++){
+        registration_number += String(rom_code[i], HEX);
+    }
+    Serial.println(registration_number); 
+    delay(1500);
 }
