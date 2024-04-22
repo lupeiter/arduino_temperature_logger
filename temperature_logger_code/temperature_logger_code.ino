@@ -1,5 +1,9 @@
-/*Arduino temperature logger
-Using DS18B20 sensor
+/*
+This script programs an Arduino temperature logger using DS18B20 sensor
+
+Author : Luiza Peiter de Barros Barreto
+Date: 22.03.2024
+Course: Practical Measurements Electronics and Interfaces in Ocean Sciences 
 */
 #include <OneWire.h>
 #include <RTClib.h>
@@ -74,7 +78,7 @@ void loop(){
     if (rom_code[0] != 0x28) {
         Serial.print("# Sensor is not a DS18B20 sensor!");
     }
-    String registration_number;
+    String registration_number = "";
     for (int i=1; i<7; i++){
         registration_number += String(rom_code[i], HEX);
     }
